@@ -63,10 +63,10 @@ if(tensorflow_BUILD_CONTRIB_KERNELS)
       "${tensorflow_source_dir}/tensorflow/contrib/boosted_trees/ops/split_handler_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/boosted_trees/ops/stats_accumulator_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/boosted_trees/ops/training_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/factorization/kernels/clustering_ops.cc"
+      "${tensorflow_source_dir}/tensorflow/core/kernels/clustering_ops.cc" #
       "${tensorflow_source_dir}/tensorflow/contrib/factorization/kernels/masked_matmul_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/factorization/kernels/wals_solver_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/factorization/ops/clustering_ops.cc"
+      "${tensorflow_source_dir}/tensorflow/core/ops/clustering_ops.cc" #
       "${tensorflow_source_dir}/tensorflow/contrib/factorization/ops/factorization_ops.cc"
       #"${tensorflow_source_dir}/tensorflow/contrib/ffmpeg/decode_audio_op.cc"
       #"${tensorflow_source_dir}/tensorflow/contrib/ffmpeg/encode_audio_op.cc"
@@ -88,11 +88,11 @@ if(tensorflow_BUILD_CONTRIB_KERNELS)
       "${tensorflow_source_dir}/tensorflow/contrib/nearest_neighbor/ops/nearest_neighbor_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/resampler/kernels/resampler_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/resampler/ops/resampler_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/rnn/kernels/blas_gemm.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/rnn/kernels/gru_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/rnn/kernels/lstm_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/rnn/ops/gru_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/rnn/ops/lstm_ops.cc"
+      "${tensorflow_source_dir}/tensorflow/core/kernels/rnn/blas_gemm.cc" #
+      "${tensorflow_source_dir}/tensorflow/core/kernels/rnn/gru_ops.cc"  #
+      "${tensorflow_source_dir}/tensorflow/core/kernels/rnn/lstm_ops.cc" # 
+      #
+      # 
       "${tensorflow_source_dir}/tensorflow/contrib/seq2seq/kernels/beam_search_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/seq2seq/ops/beam_search_ops.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/tensor_forest/ops/tensor_forest_ops.cc"
@@ -110,11 +110,11 @@ if(tensorflow_BUILD_CONTRIB_KERNELS)
       "${tensorflow_source_dir}/tensorflow/contrib/tensor_forest/hybrid/core/ops/utils.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/text/kernels/skip_gram_kernels.cc"
       "${tensorflow_source_dir}/tensorflow/contrib/text/ops/skip_gram_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/tpu/ops/cross_replica_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/tpu/ops/infeed_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/tpu/ops/outfeed_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/tpu/ops/replication_ops.cc"
-      "${tensorflow_source_dir}/tensorflow/contrib/tpu/ops/tpu_configuration_ops.cc"
+      "${tensorflow_source_dir}/tensorflow/core/ops/tpu_cross_replica_ops.cc"  #
+      "${tensorflow_source_dir}/tensorflow/core/ops/tpu_infeed_ops.cc" #
+      "${tensorflow_source_dir}/tensorflow/core/ops/tpu_outfeed_ops.cc" #
+      "${tensorflow_source_dir}/tensorflow/core/ops/tpu_replication_ops.cc" #
+      "${tensorflow_source_dir}/tensorflow/core/ops/tpu_configuration_ops.cc" #
     )
   list(APPEND tf_core_kernels_srcs ${tf_contrib_kernels_srcs})
 endif(tensorflow_BUILD_CONTRIB_KERNELS)
